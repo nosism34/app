@@ -5,18 +5,25 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.View
+import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myappgit.Model.MainViewModel
+import com.example.myappgit.Model.ViewModelFactory
+import com.example.myappgit.Model.temaViewModel
 import com.example.myappgit.R
 import com.example.myappgit.databinding.ActivityMainBinding
 import com.example.myappgit.response.GitHubResponse
 import com.example.myappgit.response.ItemsItem
 import com.example.myappgit.retrofit.ApiConfig
+import com.example.myappgit.util.SettingPreference
+import com.example.myappgit.util.dataStore
+import com.google.android.material.switchmaterial.SwitchMaterial
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -35,7 +42,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
-
         adapter = ReviewAdapter()
         adapter.setOnItemClickCallback(object : ReviewAdapter.OnItemClickCallback {
             override fun onItemClicked(userActivity: ItemsItem) {
