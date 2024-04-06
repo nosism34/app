@@ -30,7 +30,7 @@ class DetailUserActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val username = intent.getStringExtra(EXTRA_USERNAME)
-        val favoriteUser = intent.getParcelableExtra<FavoriteUser>(EXTRA_FAVORITE_USER)
+        val favoriteUser = intent.getStringExtra(EXTRA_FAVORITE_USER)
         if (username == null) {
             finish()
             return
@@ -124,7 +124,11 @@ class DetailUserActivity : AppCompatActivity() {
     }
 
     private fun setFavoriteIcon(isFavorite: Boolean) {
-        val drawableId = if (isFavorite) R.drawable.redfavorite else R.drawable.favorite
+        val drawableId = if (isFavorite) {
+            R.drawable.redfavorite
+        }else {
+            R.drawable.favorite
+        }
         val favoriteIcon = ContextCompat.getDrawable(this, drawableId)
         binding.favorite.setImageDrawable(favoriteIcon)
     }

@@ -32,7 +32,7 @@ class MainViewModel : ViewModel() {
 
 
     companion object {
-        private const val TAG = "MainViewModel"
+        private const val TAG = "ViewModel"
         private const val RESTAURANT_ID = "username"
     }
 
