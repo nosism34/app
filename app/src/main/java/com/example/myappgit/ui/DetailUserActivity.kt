@@ -124,11 +124,7 @@ class DetailUserActivity : AppCompatActivity() {
     }
 
     private fun setFavoriteIcon(isFavorite: Boolean) {
-        val drawableId = if (isFavorite) {
-            R.drawable.redfavorite
-        }else {
-            R.drawable.favorite
-        }
+        val drawableId = if (isFavorite) R.drawable.redfavorite else R.drawable.favorite
         val favoriteIcon = ContextCompat.getDrawable(this, drawableId)
         binding.favorite.setImageDrawable(favoriteIcon)
     }

@@ -10,5 +10,5 @@ import dev.icerock.moko.parcelize.Parcelize
 data class FavoriteUser(
     @PrimaryKey val id: Int,
     val username: String,
-    val avatarUrl: String
+    val avatarUrl: String,
 )
